@@ -218,5 +218,10 @@ exec_always feh --bg-scale /home/neho/Pictures/wg/o3749356.jpg
 # Pantalla de Bloqueo
 bindsym  $mod+shift+x exec i3lock --color "$bg-color"
 
-#CONTROLES
+# APPLETS
+exec --no-startup-id nm-applet
 
+# BOTONES + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+# Brillo de la pantalla
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
