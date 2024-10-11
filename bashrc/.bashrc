@@ -30,6 +30,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/.dotnet/tools"
 	# Nim - Nimble
 export PATH=/home/neho/.nimble/bin:$PATH
+	# Z
+. /home/neho/Projects/z/z.sh
 
 # Ejecutar al abrir
 clear
