@@ -1,0 +1,103 @@
+/* Estilos generales */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Nerd Font Hack";
+    font-size: 14px;
+    min-height: 24px;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+#window {
+    margin-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	/*
+    color: #f8f8f2;
+	background: #282a36;
+    */
+    color: transparent;
+	background: transparent;
+}
+
+/* Configuración básica compartida */
+#workspaces,
+#clock,
+#battery,
+#power-profiles-daemon,
+#cpu,
+#memory,
+#backlight,
+#pulseaudio,
+#network,
+#custom-power,
+#custom-media,
+#tray,
+#idle_inhibitor {
+    margin-top: 8px;
+    margin-left: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 0;
+    border-radius: 26px;
+    transition: none;
+    color: #f8f8f2;
+    background-color: #282a36;
+}
+
+/* Botones */
+#workspaces button {
+    transition: none;
+    color: #f8f8f2;
+    background: transparent;
+    font-size: 16px;
+}
+
+#workspaces button.focused {
+    color: #9aedfe;
+}
+
+#workspaces button:hover {
+    color: #ff79c6;
+}
+
+/* Batería crítica */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation: blink 0.5s steps(12) infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Estilos específicos */
+#pulseaudio:hover {
+    background-color: #89d2e0;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor.activated {
+    color: #f8f8f2;
+}
