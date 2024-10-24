@@ -20,38 +20,20 @@ window#waybar {
 	background: transparent;
 }
 
-window#waybar.hidden {
-	opacity: 0.2;
-}
-
-#window {
-    margin-top: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
-	border-radius: 26px;
-	transition: none;
-	/*
-    color: #f8f8f2;
-	background: #282a36;
-    */
-    color: transparent;
-	background: transparent;
-}
-
 /* Para todos los modulos */
 #workspaces,
+#window,
+#submap,
 #clock,
 #battery,
-#power-profiles-daemon,
 #cpu,
 #memory,
 #backlight,
 #pulseaudio,
 #network,
+#custom-weather,
 #custom-power,
-#custom-media,
-#tray,
-#idle_inhibitor {
+#tray {
     margin-top: 8px;
     margin-left: 8px;
     padding-left: 16px;
@@ -61,6 +43,14 @@ window#waybar.hidden {
     transition: none;
     color: #CDD6F4;
     background-color: #1E1E2E;
+}
+
+window#waybar.empty #window  {
+	background: transparent; /* No pone la burbuja de la ventana si no hay ventanas */
+}
+
+#custom-power {
+    margin-right: 8px; /* El power button no esta pegado al borde*/
 }
 
 /* Botones del Workspace */
@@ -109,8 +99,6 @@ window#waybar.hidden {
     color: #1E1E2E;
 }
 
-
-
 #clock:hover {
     background-color: #F9E2AF; /* amarillo */
     color: #1E1E2E;
@@ -118,30 +106,6 @@ window#waybar.hidden {
 
 #custom-power:hover {
     background-color: #F38BA8; /* rojo */
-    color: #1E1E2E;
-}
-
-
-/* Activar ojo */
-
-#idle_inhibitor.activated {
-    color: #1E1E2E;
-    background-color: #94E2D5;
-}
-
-/* Hover del Power Profile */
-#power-profiles-daemon.performance:hover {
-    background-color: #F38BA8;
-    color: #1E1E2E;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #89B4FA;
-    color: #1E1E2E;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #A6E3A1;
     color: #1E1E2E;
 }
 
