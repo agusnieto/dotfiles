@@ -1,17 +1,8 @@
-/*
-  ____      _                              _
- / ___|__ _| |_ _ __  _ __  _   _  ___ ___(_)_ __
-| |   / _` | __| '_ \| '_ \| | | |/ __/ __| | '_ \
-| |__| (_| | |_| |_) | |_) | |_| | (_| (__| | | | |
- \____\__,_|\__| .__/| .__/ \__,_|\___\___|_|_| |_|
-               |_|   |_|
-*/
-
 /* Estilos generales */
 * {
     border: none;
     border-radius: 0;
-    font-family: "Nerd Font Hack";
+    font-family: FantasqueSansMono Nerd Font;
     font-size: 14px;
     min-height: 24px;
 }
@@ -22,6 +13,26 @@ window#waybar {
 
 window#waybar.empty #window  {
 	background: transparent; /* No pone la burbuja de la ventana si no hay ventanas */
+}
+
+/* Botones del Workspace */
+#workspaces button {
+    transition: none;
+    color: #CDD6F4;
+    background: transparent;
+    font-size: 16px;
+}
+
+#workspaces button.active {
+    color: #F38BA8;
+}
+
+#workspaces button.focused {
+    color: #F38BA8;
+}
+
+#workspaces button:hover {
+    color: #F38BA8;
 }
 
 /* Para todos los modulos */
@@ -48,26 +59,6 @@ window#waybar.empty #window  {
 
 #custom-power {
     margin-right: 8px; /* El power button no esta pegado al borde*/
-}
-
-/* Botones del Workspace */
-#workspaces button {
-    transition: none;
-    color: #CDD6F4;
-    background: transparent;
-    font-size: 16px;
-}
-
-#workspaces button.active {
-    color: #F38BA8;
-}
-
-#workspaces button.focused {
-    color: #F38BA8;
-}
-
-#workspaces button:hover {
-    color: #F38BA8;
 }
 
 /* Batería baja */
@@ -101,12 +92,4 @@ window#waybar.empty #window  {
     color: #1E1E2E;
 }
 
-/* Especifico de los tray */
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
 
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
