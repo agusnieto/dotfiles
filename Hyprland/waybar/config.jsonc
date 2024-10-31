@@ -23,14 +23,16 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-             "default": "  "
+             "default": ""
         },
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
     "hyprland/window": {
+	"format": "{}",
 	"icon": true,
-	"icon-size": 20
+	"icon-size": 20,
+	"max-length": 40
     },
     "clock": {
         "timezone": "America/Argentina/Cordoba",
@@ -55,7 +57,7 @@
         "format-icons": [" ", " ", " ", " ", " "]
     },
     "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon}	{format_source}",
         "format-bluetooth": "{volume}% {icon}   {format_source}",
         "format-bluetooth-muted": "  {icon}   {format_source}",
         "format-muted": "    {format_source}",
@@ -68,7 +70,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["   ", "   ", "   "]
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
