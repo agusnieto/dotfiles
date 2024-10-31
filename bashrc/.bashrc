@@ -5,8 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Mi terminal por defecto
+# Variables Por Defecto
 export TERMINAL=kitty
+export EDITOR=nano
 
 # Colores que uso
 #cyn='\[\033[01;36m\]'   # Cyan
@@ -19,6 +20,7 @@ PS1="(\u@${cyn}\h${clr}) [\w] ${cyn}$ ${clr}"
 # Visuales
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias cbonsai='cbonsai -l -i'
 
 # Calidad de vida
 HISTCONTROL=ignoredups
@@ -31,23 +33,28 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 	# Nim - Nimble
 export PATH=/home/neho/.nimble/bin:$PATH
 	# Z
-. /home/neho/Projects/z/z.sh
+#. /home/neho/Projects/z/z.sh
 
 # Ejecutar al abrir
 clear
 pfetch
 
+
 # Funciones
 paquetes() {
-    echo "loading package managers..."
+	echo "cargando paquetes..."
 
-    echo "nvm..."
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+	echo "cargo..."
+	. "$HOME/.cargo/env"
 
-    echo "cargo..."
-    . "$HOME/.cargo/env"
+	echo "node..."
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+	echo "listo!"
+}
 
-    echo "done!"
+# Abrir tock
+function tock() {
+    /home/neho/Projects/tock/target/release/tock -c -m -s
 }
