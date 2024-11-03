@@ -2,12 +2,12 @@
 /* Estilos generales */
 * {
     font-family: FantasqueSansMono Nerd Font;
-    font-size: 14px;
+    font-size: 16px;
     min-height: 0px;
 }
 
 window#waybar {
-	background: @base;
+	background: @crust;
 	color: @text;
 	margin: 5px 5px;
 }
@@ -21,7 +21,7 @@ window#waybar.empty #window  {
 #workspaces {
   border-radius: 1rem;
   margin: 5px;
-  background-color: @surface0;
+  background-color: transparent;
   margin-left: 1rem;
 }
 
@@ -44,6 +44,7 @@ window#waybar.empty #window  {
 /* Para todos los modulos */
 #window,
 #custom-music,
+#mpd,
 #custom-weather,
 #backlight,
 #battery,
@@ -51,7 +52,7 @@ window#waybar.empty #window  {
 #clock,
 #tray,
 #custom-power {
-  background-color: @surface0;
+  background-color: transparent;
   padding: 0.5rem 1rem;
   margin: 5px 0;
 }
@@ -60,6 +61,7 @@ window#waybar.empty #window  {
 
 /* Izquierda */
 #window {
+    background-color: @mantle;
     color: @lavender;
     border-radius: 1rem 0px 0px 1rem;
     margin-right: 1rem;
@@ -68,9 +70,21 @@ window#waybar.empty #window  {
 
 /* Centro */
 #custom-music {
+  background-color: @mantle;
   color: @mauve;
   border-radius: 1rem;
 }
+
+#mpd {
+  background-color: @mantle;
+  color: @mauve;
+  border-radius: 1rem;
+}
+
+#mpd.stopped {
+  background-color: transparent;
+}
+
 
 /* Derecha */
 
@@ -114,6 +128,7 @@ window#waybar.empty #window  {
 }
 
 #custom-power {
+    background-color: @mantle;
     border-radius: 1rem 0px 0px 1rem;
     margin-right: 1rem;
     border-radius: 1rem;
@@ -121,6 +136,7 @@ window#waybar.empty #window  {
 }
 
 #tray {
+  background-color: @mantle;
   border-radius: 1rem 0px 0px 1rem;
   margin-right: 1rem;
   border-radius: 1rem;
