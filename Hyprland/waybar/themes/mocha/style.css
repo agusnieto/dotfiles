@@ -28,7 +28,7 @@ window#waybar.empty #window  {
 #workspaces button {
   color: @lavender;
   border-radius: 1rem;
-  padding: 0.4rem;
+  padding: 0.30rem;
 }
 
 #workspaces button.active {
@@ -53,7 +53,7 @@ window#waybar.empty #window  {
 #tray,
 #custom-power {
   background-color: transparent;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   margin: 5px 0;
 }
 
