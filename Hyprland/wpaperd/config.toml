@@ -1,6 +1,6 @@
 [default]
 path = "/home/neho/Pictures/wg"
-duration = "5m"
+duration = "1m"
 mode = "center"
-sorting = "random"
-queue-size = 150
+sorting = "ascending"
+queue-size = 184
