@@ -52,33 +52,27 @@ window#waybar.empty #window  {
 #clock,
 #tray,
 #custom-power {
-  background-color: transparent;
+  background-color: @mantle;
   padding: 0.5rem 0.75rem;
   margin: 5px 0;
+  border-radius: 1rem;
 }
 
 /* Modulos especificos por orden */
 
 /* Izquierda */
 #window {
-    background-color: @mantle;
     color: @lavender;
-    border-radius: 1rem 0px 0px 1rem;
     margin-right: 1rem;
-    border-radius: 1rem;
 }
 
 /* Centro */
 #custom-music {
-  background-color: @mantle;
   color: @mauve;
-  border-radius: 1rem;
 }
 
 #mpd {
-  background-color: @mantle;
   color: @mauve;
-  border-radius: 1rem;
 }
 
 #mpd.stopped {
@@ -90,7 +84,6 @@ window#waybar.empty #window  {
 
 #custom-weather {
   color: @peach;
-  border-radius: 1rem 0px 0px 1rem;
 }
 
 #backlight {
@@ -99,12 +92,11 @@ window#waybar.empty #window  {
 
 #battery {
   color: @green;
-  border-radius: 0px 1rem 1rem 0px;
 }
 
 #battery.critical:not(.charging) { /* Animacion batería baja */
     background-color: @red;
-    color: #45475A;
+    color: @crust;
     animation: blink 0.5s steps(12) infinite alternate;
 }
 
@@ -116,28 +108,20 @@ window#waybar.empty #window  {
 
 #pulseaudio {
   color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
 }
 
 
 #clock {
   color: @blue;
-  border-radius: 0px 1rem 1rem 0px;
   margin-right: 1rem;
 }
 
 #custom-power {
-    background-color: @mantle;
-    border-radius: 1rem 0px 0px 1rem;
     margin-right: 1rem;
-    border-radius: 1rem;
     color: @red;
 }
 
 #tray {
-  background-color: @mantle;
-  border-radius: 1rem 0px 0px 1rem;
   margin-right: 1rem;
-  border-radius: 1rem;
 }
