@@ -63,10 +63,19 @@ paquetes() {
 
 # Abrir tock
 function tock() {
-    /home/neho/Projects/tock/target/release/tock -c -m -s
+    /home/neho/Projects/tock/target/release/tock -c -m -s -f " "
 }
 
-#
+# Fastfetch con dos imagenes aleatorias
+ff() {
+    if [ $((RANDOM % 2)) -eq 0 ]; then
+        fastfetch --logo /home/neho/.config/fastfetch/miku1.png
+    else
+        fastfetch --logo /home/neho/.config/fastfetch/miku2.png
+    fi
+}
+
+# Power Level 10k Theme
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
