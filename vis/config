@@ -88,4 +88,4 @@ audio.stereo.enabled=true
 #colors.override.terminal=false
 
 ##Specifies the color scheme. The color scheme must be in ~/.config/vis/colors/ directory. The default scheme is "colors".
-colors.scheme=mocha
+colors.scheme=tomorrow-night
