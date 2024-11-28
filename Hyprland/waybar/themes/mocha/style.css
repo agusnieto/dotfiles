@@ -84,6 +84,7 @@ window#waybar.empty #window  {
 
 #custom-weather {
   color: @peach;
+  margin-left: 1rem;
 }
 
 #backlight {
