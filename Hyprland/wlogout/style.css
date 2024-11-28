@@ -5,27 +5,25 @@
 
 /*Color del fondo cuando se activa*/
 window {
-	background-color: rgba(12, 12, 12, 0.9);
+	background-color: rgba(29, 31, 33, 0.9);
 }
 
 /* Botones */
 button {
     border-radius: 0;
-    border-color: black;
-	text-decoration-color: #BAC2DE;
-    color: #BAC2DE;
-	background-color: #1E1E2E;
-	border-style: solid;
-	border-width: 1px;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 25%;
+    border: 2px solid #c4c8c6;
+    color: #c4c8c6;
+    background-color: #1d1f21;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
 }
 
 /* Boton que le paso el mouse */
 button:focus, button:active, button:hover {
-	background-color: #45475A;
-	outline-style: none;
+    background-color: #141517;
+    color: #fffefe;
+    outline: none;
 }
 
 #lock {
