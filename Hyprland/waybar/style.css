@@ -88,6 +88,6 @@ window#waybar.empty #window  {
     margin-right: 3px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    background: #F00;
-    color: #FFF;
+    background: #cc6666;
+    color: #1d1f21;
 }
