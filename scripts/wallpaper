@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Cambiar la carpeta que contiene los wallpapers.
+
+if [ -z "$1" ]; then
+    echo "Uso: wallpaper [carpeta]"
+    echo "Opciones disponibles: wg, a, e"
+    exit 1
+fi
+
+case "$1" in
+    "wg"|"a"|"e")
+        config_path="/home/neho/.config/wpaperd/config-${1}.toml"
+        if [ ! -f "$config_path" ]; then
+            echo "Error: La configuración $config_path no existe"
+            exit 1
+        fi
+        pkill wpaperd
+        sleep 0.5
+        wpaperd -c "$config_path" -d
+        echo "Cambiado wallpaper a la colección: $1"
+        ;;
+    *)
+	echo "Opciones validas: wg, a, e"
+        exit 1
+        ;;
+esac

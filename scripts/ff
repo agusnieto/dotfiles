@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Abrir fastfetch con una imagen dentro de la carpeta de configuracion.
+
+# Verificar que fastfetch está instalado
+if ! command -v fastfetch &> /dev/null; then
+    echo "Error: fastfetch no está instalado"
+    exit 1
+fi
+
+# Verificar que los archivos de imagen existen
+asuna_img="/home/neho/.config/fastfetch/asuna.png"
+miku_img="/home/neho/.config/fastfetch/miku2.png"
+
+if [ ! -f "$asuna_img" ] || [ ! -f "$miku_img" ]; then
+    echo "Error: No se encontraron las imágenes necesarias"
+    exit 1
+fi
+
+# Tu lógica original
+if [ $((RANDOM % 2)) -eq 0 ]; then
+    fastfetch --logo "$asuna_img"
+else
+    fastfetch --logo "$miku_img"
+fi
