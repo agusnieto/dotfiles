@@ -1,6 +1,6 @@
 [default]
-path = "/home/neho/Pictures/wg"
+path = "/home/neho/Pictures/a"
 duration = "1m"
 mode = "center"
 sorting = "random"
-queue-size = 257
+queue-size = 158
