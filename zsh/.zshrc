@@ -9,7 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 #. /home/neho/Projects/z/z.sh
 
 # OhMyZsh Theme
-#ZSH_THEME="xiong-chiamiov"
+# ZSH_THEME="xiong-chiamiov"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" ) # Pool para temas random.
 
 # Opciones de Autocompletado
@@ -48,6 +48,8 @@ clear
 pfetch
 
 # Funciones
+
+# Cargar paquetes npm, cargo, etc.
 paquetes() {
         echo "cargando paquetes..."
 
@@ -61,19 +63,19 @@ paquetes() {
         echo "listo!"
 }
 
-# Abrir tock
-function tock() {
-    /home/neho/Projects/tock/target/release/tock -c -m -s -f " "
+# Abrir yazi y quedarme en la carpeta al salir.
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
 
-# Fastfetch con dos imagenes aleatorias
-ff() {
-    if [ $((RANDOM % 2)) -eq 0 ]; then
-        fastfetch --logo /home/neho/.config/fastfetch/miku1.png
-    else
-        fastfetch --logo /home/neho/.config/fastfetch/miku2.png
-    fi
-}
+# Scripts Propios
+export PATH="$HOME/.local/scripts:$PATH"
+
 
 # Power Level 10k Theme
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
