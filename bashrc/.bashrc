@@ -35,13 +35,17 @@ export PATH=/home/neho/.nimble/bin:$PATH
 	# Z
 #. /home/neho/Projects/z/z.sh
 
+# Scripts Propios
+export PATH="$HOME/.local/scripts:$PATH"
+
+
 # Ejecutar al abrir
 clear
 pfetch
 
 
 # Funciones
-paquetes() {
+function paquetes() {
 	echo "cargando paquetes..."
 
 	echo "cargo..."
@@ -54,17 +58,11 @@ paquetes() {
 	echo "listo!"
 }
 
-# Abrir tock
-function tock() {
-    /home/neho/Projects/tock/target/release/tock -c -m -s -f " "
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
-
-# Fastfetch con dos imagenes aleatorias
-ff() {
-    if [ $((RANDOM % 2)) -eq 0 ]; then
-        fastfetch --logo /home/neho/.config/fastfetch/miku1.png
-    else
-        fastfetch --logo /home/neho/.config/fastfetch/miku2.png
-    fi
-}
-
