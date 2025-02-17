@@ -2,4 +2,4 @@
 
 # Abrir "tock" automaticamente centrado, formato militar, con segundos, y sin la "locacion".
 
-/home/neho/Projects/tock/target/release/tock -c -m -s -f " "
+/home/neho/Repositories/tock/target/release/tock -c -m -s -f " "
