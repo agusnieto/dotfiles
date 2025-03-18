@@ -10,7 +10,7 @@ setopt notify
 unsetopt autocd beep extendedglob nomatch
 
 # Variables Por Defecto
-export TERMINAL=kitty
+#export TERMINAL=kitty
 export EDITOR=nano
 
 # Teclas estilo Emacs
@@ -64,12 +64,4 @@ function paquetes() {
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Carga el nvm
         [ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"  # Autocompletado
         echo "listo!"
-}
-function y() {
-        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-        yazi "$@" --cwd-file="$tmp"
-        if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-                builtin cd -- "$cwd"
-        fi
-        rm -f -- "$tmp"
 }
