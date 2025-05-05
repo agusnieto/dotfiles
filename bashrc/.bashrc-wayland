@@ -5,6 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+ibus-daemon -xrd
+
 # Variables Por Defecto
 #export TERMINAL=kitty
 export EDITOR=nano
@@ -27,10 +32,15 @@ alias cbonsai='cbonsai -l -i'
 HISTCONTROL=ignoredups
 
 # PATHS
+	# Agregar el ~/.local/bin y scripts al PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/scripts:$PATH"
+	# Path de .NET para git credential manager
 export PATH="$PATH:$HOME/.dotnet/tools"
+	# Nim - Nimble
 export PATH=/home/neho/.nimble/bin:$PATH
+	# Z
+#. /home/neho/Projects/z/z.sh
 
 # Ejecutar al abrir
 clear
