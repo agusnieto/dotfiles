@@ -7,7 +7,8 @@
 
 # Variables Por Defecto
 #export TERMINAL=kitty
-export EDITOR=nano
+export EDITOR=nvim
+export VISUAL=nvim
 
 # Colores que uso
 #cyn='\[\033[01;36m\]'   # Cyan
@@ -30,6 +31,11 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+
+alias v='nvim'
+alias vim='nvim'
+
+alias scrot='scrot "/home/neho/Pictures/Screenshots/Screenshot From $(date +"%Y-%m-%d %H-%M-%S").png" -p -c -d 3'
 
 # Calidad de vida
 HISTCONTROL=ignoredups
