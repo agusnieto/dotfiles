@@ -1,0 +1,90 @@
+#!/bin/bash
+
+# default values
+RESOLUTION="1920x1080"
+SCALE="1"
+
+show_help() {
+    echo "usage: hdmirror [-h] [-r] [-s]"
+    echo ""
+    echo "hdmirror - simple presentation utility"     
+    echo "hdmirror <operation> [option]"
+    echo ""
+    echo "operation:"
+    echo "  on/start          Switch to presentation mode"
+    echo "  off/stop          Return to default configuration" 
+    echo "  status            Show display and current scaling information"
+    echo "  resolutions       List available resolutions"
+    echo ""
+    echo "options:"
+    echo "  -h, --help        Show this help message and exit"
+    echo "  -r, --resolution  Set a specific resolution"
+    echo "  -s, --scale       Change base scale to mirror"
+    echo ""
+    echo "examples:"
+    echo "  hdmirror on"
+    echo "  hdmirror on -r 1680x1050"
+    echo "  hdmirror on -s 1.5"
+    echo "  hdmirror on -r 2560x1440 -s 1.2"
+}
+
+OPERATION="$1"
+shift
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -r|--resolution)
+            RESOLUTION="$2"
+            shift 2
+            ;;
+        -s|--scale)
+            SCALE="$2"
+            shift 2
+            ;;
+        -h|--help)
+            show_help
+            exit 0
+            ;;
+        *)
+            echo "Unknown option: $1"
+            echo "Use 'hdmirror --help' for usage information."
+            exit 1
+            ;;
+    esac
+done
+
+case "$OPERATION" in
+    on|start)
+        echo "Changing display to mirror in (${RESOLUTION}, scale ${SCALE})..."
+        xrandr --output eDP-1 --mode "$RESOLUTION" --output HDMI-1 --mode "$RESOLUTION" --same-as eDP-1
+        xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s "$SCALE"
+        echo "Scale ${SCALE}x, resolution $RESOLUTION"
+        ;;
+    off|stop)
+        echo "Returning to default..."
+        xrandr --output eDP-1 --mode 3200x2000 --output HDMI-1 --off
+        xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 2
+        echo "Scale 2x, resolution 3200x2000"
+        ;;
+    status)
+        echo "Current status:"
+        xrandr --listmonitors
+        echo "Current scaling: $(xfconf-query -c xsettings -p /Gdk/WindowScalingFactor)"
+        ;;
+    resolutions)
+        echo "Available HDMI resolutions:"
+        xrandr | grep -A 20 "HDMI-1" | grep -E "^\s+[0-9]" | head -10
+        ;;
+    -h|--help)
+        show_help
+        exit 0
+        ;;
+    "")
+	echo "Use 'hdmirror --help' for usage information."
+	exit 1
+	;;
+    *)
+        echo "Unknown operation: $OPERATION"
+        exit 1
+        ;;
+esac
