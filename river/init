@@ -1,0 +1,170 @@
+#!/bin/bash
+
+#-----------#
+# Variables #
+#-----------#
+
+# Aplicaciones
+term="foot"
+menu="wofi"
+files="thunar"
+
+# Rivertile
+gaps=8
+padding=8
+layout="rivertile"
+
+# Tags
+tag1=1
+tag2=2
+tag3=4
+tag4=8
+tag5=16
+tag6=32
+tag7=64
+tag8=128
+tag9=256
+
+# Input y teclas
+mod="Mod4"
+keyboard="latam"
+xplode="*BY_Tech_Usb_Gaming_Keyboard*" # Teclado Xplode
+
+# Apariencia
+bg="0x24273a"
+focus="0xc6a0f6"
+unfocus="0xb7bdf8"
+urgent="0xed8796"
+width=4
+cursor="Adwaita"
+
+#-----------#
+# Rivertile #
+#-----------#
+
+riverctl default-layout $layout
+rivertile -main-location left -main-count 1 -main-ratio 0.5 -view-padding $gaps -outer-padding $padding &
+
+#---------------#
+# Configuration #
+#---------------#
+
+riverctl default-attach-mode bottom
+
+riverctl background-color $bg
+riverctl border-color-focused $focus
+riverctl border-color-unfocused $unfocus
+riverctl border-color-urgent $urgent
+
+riverctl border-width $width
+
+riverctl hide-cursor timeout 0
+riverctl hide-cursor when-typing enabled
+riverctl set-cursor-warp disabled
+riverctl set-repeat 60 250
+riverctl xcursor-theme $cursor
+
+#----------------------#
+# Output Configuration #
+#----------------------#
+output="eDP-1"
+scale="2"
+riverctl spawn "wlr-randr --output $output --scale $scale"
+
+#---------------------#
+# Input Configuration #
+#---------------------#
+
+riverctl keyboard-layout $keyboard
+
+riverctl input "pointer*" accel-profile flat
+riverctl input "pointer*" pointer-accel 0.3
+
+riverctl input "*Touchpad" natural-scroll enabled
+riverctl input "*Touchpad" scroll-factor 1.0
+riverctl input "*Touchpad" tap enabled
+riverctl input "*Touchpad" tap-button-map left-right-middle
+riverctl input "*Touchpad" scroll-method two-finger
+
+#----------#
+# Mappings #
+#----------#
+
+# General
+riverctl map normal $mod Q spawn $term
+riverctl map normal $mod R spawn $menu
+riverctl map normal $mod E spawn $files
+riverctl map normal $mod C close
+riverctl map normal $mod M exit
+
+# Ventanas
+riverctl map normal $mod V toggle-float
+riverctl map normal $mod P toggle-fullscreen
+
+riverctl map normal $mod H focus-view left
+riverctl map normal $mod J focus-view down
+riverctl map normal $mod K focus-view up
+riverctl map normal $mod L focus-view right
+
+riverctl map-pointer normal $mod BTN_LEFT move-view
+riverctl map-pointer normal $mod BTN_RIGHT resize-view
+
+# Workspaces
+riverctl map normal $mod 1 set-focused-tags $tag1
+riverctl map normal $mod 2 set-focused-tags $tag2
+riverctl map normal $mod 3 set-focused-tags $tag3
+riverctl map normal $mod 4 set-focused-tags $tag4
+riverctl map normal $mod 5 set-focused-tags $tag5
+riverctl map normal $mod 6 set-focused-tags $tag6
+riverctl map normal $mod 7 set-focused-tags $tag7
+riverctl map normal $mod 8 set-focused-tags $tag8
+
+# Enviar al workspace
+riverctl map normal $mod+Shift 1 spawn "riverctl set-view-tags $tag1 && riverctl set-focused-tags $tag1"
+riverctl map normal $mod+Shift 2 spawn "riverctl set-view-tags $tag2 && riverctl set-focused-tags $tag2"
+riverctl map normal $mod+Shift 3 spawn "riverctl set-view-tags $tag3 && riverctl set-focused-tags $tag3"
+riverctl map normal $mod+Shift 4 spawn "riverctl set-view-tags $tag4 && riverctl set-focused-tags $tag4"
+riverctl map normal $mod+Shift 5 spawn "riverctl set-view-tags $tag5 && riverctl set-focused-tags $tag5"
+riverctl map normal $mod+Shift 6 spawn "riverctl set-view-tags $tag6 && riverctl set-focused-tags $tag6"
+riverctl map normal $mod+Shift 7 spawn "riverctl set-view-tags $tag7 && riverctl set-focused-tags $tag7"
+riverctl map normal $mod+Shift 8 spawn "riverctl set-view-tags $tag8 && riverctl set-focused-tags $tag8"
+
+# Swap ventanas del stack
+riverctl map normal $mod+Shift J swap next
+riverctl map normal $mod+Shift K swap previous
+
+# Convertir en ventana main
+riverctl map normal $mod Tab zoom
+
+# Snap de ventana
+riverctl map normal $mod Left  snap left
+riverctl map normal $mod Down  snap down
+riverctl map normal $mod Up    snap up
+riverctl map normal $mod Right snap right
+
+# Workspace secreto
+riverctl declare-mode secret
+riverctl map normal $mod+Shift S set-view-tags $tag9
+
+riverctl map normal $mod S spawn "riverctl set-focused-tags $tag9 && riverctl enter-mode secret"
+riverctl map secret $mod S spawn "riverctl focus-previous-tags && riverctl enter-mode normal"
+riverctl map secret $mod+Shift S spawn "riverctl send-to-previous-tags && riverctl focus-previous-tags && riverctl enter-mode normal"
+
+riverctl map secret $mod Q spawn $term
+riverctl map secret $mod R spawn $menu
+riverctl map secret $mod E spawn $files
+riverctl map secret $mod C close
+riverctl map secret $mod M exit
+
+# Lock mode para despues ---
+
+#-------#
+# Rules #
+#-------#
+
+# . . .
+
+#-----------#
+# Autostart #
+#-----------#
+
