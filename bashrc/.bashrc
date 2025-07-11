@@ -5,21 +5,17 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Variables Por Defecto
-#export TERMINAL=kitty
-export EDITOR=nvim
-export VISUAL=nvim
-
 # Colores que uso
-#cyn='\[\033[01;36m\]'   # Cyan
 cyn='\[\033[36m\]'      # Cyan (sin negrita)
 clr='\[\033[00m\]'      # Reset
 
 # Prompt
 PS1="(\u@${cyn}\h${clr}) [\w] ${cyn}$ ${clr}"
 
+# Calidad de vida
+HISTCONTROL=ignoredups
+
 # Alias
-#alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias tree='tree -C --dirsfirst'
 alias cbonsai='cbonsai -l -i'
@@ -32,20 +28,10 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-alias v='nvim'
-alias vim='nvim'
+# alias v='nvim'
+# alias vim='nvim'
 
-alias scrot='scrot "/home/neho/Pictures/Screenshots/Screenshot From $(date +"%Y-%m-%d %H-%M-%S").png" -p -c -d 3'
-
-# Calidad de vida
-HISTCONTROL=ignoredups
-
-# PATHS
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/scripts:$PATH"
-export PATH="$PATH:$HOME/.dotnet/tools"
-export PATH=/home/neho/.nimble/bin:$PATH
-export PATH="$PATH:/home/neho/.lmstudio/bin"
+# alias scrot='scrot "/home/neho/Pictures/Screenshots/Screenshot From $(date +"%Y-%m-%d %H-%M-%S").png" -p -c -d 3'
 
 # Ejecutar al abrir
 clear
