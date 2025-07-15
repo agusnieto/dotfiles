@@ -51,7 +51,8 @@ focus="0xc6a0f6"
 unfocus="0xb7bdf8"
 urgent="0xed8796"
 width=4
-cursor="Adwaita"
+cursor="Hackneyed"
+size=36
 
 #-----------#
 # Rivertile #
@@ -77,7 +78,8 @@ riverctl hide-cursor timeout 0
 riverctl hide-cursor when-typing enabled
 riverctl set-cursor-warp disabled
 riverctl set-repeat 60 250
-riverctl xcursor-theme $cursor
+
+riverctl xcursor-theme "$cursor" "$size"
 
 #----------------------#
 # Output Configuration #
@@ -184,8 +186,9 @@ done
 riverctl map normal $mod V spawn "cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
 
 riverctl map normal Shift+Alt S spawn "screenshot.sh area"
-riverctl map normal Control+Alt S spawn "screenshot.sh save"
+riverctl map normal Shfit+Alt A spawn "screenshot.sh save"
 
+riverctl map normal Shift+Alt E spawn "wofi-emoji"
 
 # Lock mode para despues ---
 
@@ -202,3 +205,6 @@ riverctl map normal Control+Alt S spawn "screenshot.sh save"
 riverctl spawn dunst
 
 riverctl spawn "wl-paste --watch cliphist store"
+
+riverctl spawn "thunar --daemon"
+riverctl spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
