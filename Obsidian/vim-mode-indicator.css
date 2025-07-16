@@ -1,0 +1,26 @@
+div.status-bar-item.vimrc-support-vim-mode[data-vim-mode] {
+  font-weight: bold;
+  font-family: 'JetBrainsMono Nerd Font', monospace;
+  padding: 0.2em 1em;
+  border-radius: 4px;
+  margin-right: 0.5em;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #1e1e2e;
+}
+
+div.vimrc-support-vim-mode[data-vim-mode="normal"] {
+  background-color: #89b4fa;
+}
+
+div.vimrc-support-vim-mode[data-vim-mode="insert"] {
+  background-color: #a6e3a1;
+}
+
+div.vimrc-support-vim-mode[data-vim-mode="visual"] {
+  background-color: #f9e2af;
+}
+
+div.vimrc-support-vim-mode[data-vim-mode="replace"] {
+  background-color: #f38ba8;
+}
