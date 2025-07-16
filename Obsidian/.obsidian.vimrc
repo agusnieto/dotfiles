@@ -7,4 +7,4 @@ nmap k gk
 
 " H L son ^ $
 nmap H ^
-nmap L g_
+nmap L $
