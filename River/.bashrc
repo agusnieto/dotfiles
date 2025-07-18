@@ -8,9 +8,12 @@
 # Colores que uso
 cyn='\[\033[36m\]'      # Cyan (sin negrita)
 clr='\[\033[00m\]'      # Reset
+blu='\[\033[34m\]'
 
 # Prompt
-PS1="(\u@${cyn}\h${clr}) [\w] ${cyn}$ ${clr}"
+PS1="\w${blu} \$${clr} "			# ~ $
+# PS1="[\w] ${cyn}$ ${clr}"			# [~] $
+# PS1="(\u@${cyn}\h${clr}) [\w] ${cyn}$ ${clr}"	# (neho@arch) [~] $
 
 # Calidad de vida
 HISTCONTROL=ignoredups
@@ -28,10 +31,8 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-# alias v='nvim'
-# alias vim='nvim'
-
-# alias scrot='scrot "/home/neho/Pictures/Screenshots/Screenshot From $(date +"%Y-%m-%d %H-%M-%S").png" -p -c -d 3'
+alias v='vim'
+alias ccat='command cat'
 
 # Ejecutar al abrir
 clear
