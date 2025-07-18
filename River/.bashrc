@@ -19,11 +19,13 @@ PS1="\w${blu} \$${clr} "			# ~ $
 HISTCONTROL=ignoredups
 
 # Alias
+alias diff='diff --color -u'
 alias grep='grep --color=auto'
 alias tree='tree -C --dirsfirst'
-alias cbonsai='cbonsai -l -i'
-alias cmatrix='cmatrix -ba'
-alias cat='bat --paging=never'
+
+alias cat='bat -p --paging=never'
+alias bat='bat --paging=never'
+
 alias ls='lsd'
 
 alias ll='ls -l'
@@ -31,8 +33,10 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
+alias cbonsai='cbonsai -l -i'
+alias cmatrix='cmatrix -ba'
+
 alias v='vim'
-alias ccat='command cat'
 
 # Ejecutar al abrir
 clear
