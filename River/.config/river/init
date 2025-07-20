@@ -173,7 +173,7 @@ for mode in normal locked; do
     riverctl map -repeat $mode None XF86AudioLowerVolume spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && notif-volumen.sh'
     riverctl map $mode None XF86AudioMute spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && notif-volumen.sh'
 
-    riverctl map $mode None XF86AudioMicMute spawn 'wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle'
+    riverctl map $mode None XF86MuteMic spawn 'wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle'
 
     riverctl map -repeat $mode None XF86MonBrightnessUp spawn 'brightnessctl set +5% && notif-brightness.sh'
     riverctl map -repeat $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%- && notif-brightness.sh'
@@ -196,7 +196,24 @@ riverctl map normal Shift+Alt E spawn "wofi-emoji"
 # Rules #
 #-------#
 
-# . . .
+# Decoraciones de ventanas por river (Agregar bordes)
+riverctl rule-add -app-id "firefox" ssd
+riverctl rule-add -app-id "obsidian" ssd
+riverctl rule-add -app-id "imv" ssd
+riverctl rule-add -app-id "thunar" ssd
+riverctl rule-add -app-id "blueman-manager" ssd
+riverctl rule-add -app-id "io.bassi.Amberol" ssd
+riverctl rule-add -app-id "xarchiver" ssd
+
+# Ventanas que se inician flotantes
+riverctl rule-add -app-id "imv" float
+riverctl rule-add -app-id "mpv" float
+riverctl rule-add -app-id "blueman-manager" float
+riverctl rule-add -app-id "io.bassi.Amberol" float
+riverctl rule-add -app-id "xarchiver" float
+
+# Ventanas de firefox
+riverctl rule-add -app-id "firefox" -title "Library" float
 
 #-----------#
 # Autostart #
