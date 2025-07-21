@@ -1,0 +1,38 @@
+#!/bin/bash
+
+theme="$1"
+colors="$XDG_CACHE_HOME/colors/$theme.txt"
+base="$XDG_CONFIG_HOME/dunst/baserc"
+target="$XDG_CONFIG_HOME/dunst/dunstrc"
+
+if [ ! -f "$colors" ]; then
+  notify-send "Dunst Theme" "Color theme '$theme' not found!"
+  exit 1
+fi
+
+bg="$(sed -n '1p'  "$colors")"
+fg="$(sed -n '16p' "$colors")"
+frame="$(sed -n '13p' "$colors")" # azul brillante
+low="$(sed -n '11p' "$colors")"   # verde brillante
+norm="$(sed -n '14p' "$colors")"  # magenta brillante
+crit="$(sed -n '10p' "$colors")"  # rojo brillante
+
+{
+  cat "$base"
+  echo ""
+  echo "[global]"
+  echo "background = \"$bg\""
+  echo "foreground = \"$fg\""
+  echo "frame_color = \"$frame\""
+  echo ""
+  echo "[urgency_low]"
+  echo "frame_color = \"$low\""
+  echo ""
+  echo "[urgency_normal]"
+  echo "frame_color = \"$norm\""
+  echo ""
+  echo "[urgency_critical]"
+  echo "frame_color = \"$crit\""
+} > "$target"
+
+pkill dunst && dunst & disown
