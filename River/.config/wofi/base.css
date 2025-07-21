@@ -1,8 +1,3 @@
-@define-color border     #ebdbb2;
-@define-color background #1d2021;
-@define-color font       #ebdbb2;
-@define-color select	 #8ec07c;
-
 #window {
   border: 4px solid @border;
   background-color: @background;

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+theme="$1"
+
+wofi_dir="$XDG_CONFIG_HOME/wofi"
+
+colors="$wofi_dir/colors/$theme.css"
+structure="$wofi_dir/base.css"
+output="$wofi_dir/style.css"
+
+if [ ! -f "$colors" ]; then
+  notify-send "Wofi Theme" "'$theme' not found."
+  exit 1
+fi
+
+cat "$colors" > "$output"
+echo "" >> "$output"
+cat "$structure" >> "$output"
+notify-send "Wofi Theme" "Using '$theme'"
