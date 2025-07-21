@@ -16,6 +16,7 @@ frame="$(sed -n '13p' "$colors")" # azul brillante
 low="$(sed -n '11p' "$colors")"   # verde brillante
 norm="$(sed -n '14p' "$colors")"  # magenta brillante
 crit="$(sed -n '10p' "$colors")"  # rojo brillante
+bar="$(sed -n '18p' "$colors")"  # especial
 
 {
   cat "$base"
@@ -24,6 +25,7 @@ crit="$(sed -n '10p' "$colors")"  # rojo brillante
   echo "background = \"$bg\""
   echo "foreground = \"$fg\""
   echo "frame_color = \"$frame\""
+  echo "highlight = \"$bar\""
   echo ""
   echo "[urgency_low]"
   echo "frame_color = \"$low\""
