@@ -228,3 +228,6 @@ riverctl spawn "thunar --daemon"
 riverctl spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 riverctl spawn "cliphist wipe"
+
+last_theme=$(cat "$XDG_CACHE_HOME/colors/last")
+riverctl spawn "theme-switch $last_theme"
