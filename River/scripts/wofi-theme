@@ -3,8 +3,7 @@
 theme="$1"
 
 wofi_dir="$XDG_CONFIG_HOME/wofi"
-
-colors="$wofi_dir/colors/$theme.css"
+colors="$XDG_CACHE_HOME/colors/$theme.txt"
 structure="$wofi_dir/base.css"
 output="$wofi_dir/style.css"
 
@@ -13,7 +12,16 @@ if [ ! -f "$colors" ]; then
   exit 1
 fi
 
-cat "$colors" > "$output"
-echo "" >> "$output"
-cat "$structure" >> "$output"
+# Agarrar lineas 17 y 18
+base=$(sed -n 17p "$colors")
+focus=$(sed -n 18p "$colors")
+
+# Mandarlo al style.css de wofi
+{
+  echo "@define-color base $base;"
+  echo "@define-color focus $focus;"
+  echo ""
+  cat "$structure"
+} > "$output"
+
 notify-send "Wofi Theme" "Using '$theme'"
