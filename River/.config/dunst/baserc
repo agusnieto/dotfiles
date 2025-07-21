@@ -1,0 +1,4 @@
+[global]
+separator_color= frame
+timeout = 10
+font = Terminess Nerd Font 14
