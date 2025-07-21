@@ -1,0 +1,15 @@
+#!/bin/bash
+
+theme="$1"
+colors="$XDG_CACHE_HOME/colors/$theme.txt"
+
+if [ ! -f "$colors" ]; then
+  notify-send "Theme switcher" "Color theme '$theme' not found!"
+  exit 1
+fi
+
+foot-theme $1
+wofi-theme $1
+river-theme $1
+dunst-theme $1
+echo "$1" > "$XDG_CACHE_HOME/colors/last"
