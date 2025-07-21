@@ -12,7 +12,7 @@ fi
 # Agarrar los hex, agregar 0x y sacarle el #
 # #rrggbb -> 0xrrggbb
 bg="0x$(sed -n '1p' "$colors" | cut -c2-)"	# Background
-focus="0x$(sed -n '16p' "$colors" | cut -c2-)"	# Foreground
+focus="0x$(sed -n '18p' "$colors" | cut -c2-)"	# Special
 unfocus="0x$(sed -n '9p' "$colors" | cut -c2-)"	# Gray8
 urgent="0x$(sed -n '10p' "$colors" | cut -c2-)"	# Red9
 
