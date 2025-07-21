@@ -32,7 +32,7 @@ dbus-update-activation-environment --systemd \
 
 # Aplicaciones
 term="foot"
-menu="wofi --show drun"
+menu="wofi --show drun --no-actions"
 files="thunar"
 
 # Rivertile
@@ -184,6 +184,7 @@ done
 #--------------#
 
 riverctl map normal $mod V spawn "cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
+riverctl map normal $mod Escape spawn "powermenu"
 
 riverctl map normal Shift+Alt S spawn "screenshot.sh area"
 riverctl map normal Shfit+Alt A spawn "screenshot.sh save"

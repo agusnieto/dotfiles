@@ -1,0 +1,55 @@
+@define-color border     #c6a0f6;
+@define-color background #11111b;
+@define-color font       #cdd6f4;
+@define-color bar        #1e1e2e;
+
+#window {
+  border: 4px solid @border;
+  background-color: @background;
+  color: @font;
+}
+
+#outer-box {
+  margin: 10px;
+}
+
+#input {
+  all: unset;
+  margin: -10px;
+  padding: 6px 10px;
+  background-color: @bar;
+  border-radius: 6px;
+  color: @font;
+}
+
+#scroll {
+  margin: 0px 8px;
+}
+
+#entry {
+  padding: 6px 10px;
+  margin: 2px;
+  border-radius: 6px;
+}
+
+#entry:selected {
+  background-color: @border;
+  color: @background;
+}
+
+#text {
+  all: unset;
+  font-family: "Terminess Nerd Font";
+  font-size: 14px;
+}
+
+#img {
+  all: unset;
+  margin-right: 6px;
+}
+
+#expander-box {
+  background-color: @background;
+  border-radius: 6px;
+  margin-top: 4px;
+}
