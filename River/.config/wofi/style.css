@@ -1,12 +1,10 @@
-@define-color border     #ebdbb2;
-@define-color background #1d2021;
-@define-color font       #ebdbb2;
-@define-color select	 #8ec07c;
+@define-color base #1e2326;
+@define-color focus #a7c080;
 
 #window {
-  border: 4px solid @border;
-  background-color: @background;
-  color: @font;
+  border: 4px solid @focus;
+  background-color: @base;
+  color: @focus;
 }
 
 #outer-box {
@@ -17,9 +15,9 @@
   all: unset;
   margin: -10px;
   padding: 6px 10px;
-  background-color: @background;
+  background-color: @base;
   border-radius: 6px;
-  color: @font;
+  color: @fous;
 }
 
 #scroll {
@@ -33,8 +31,8 @@
 }
 
 #entry:selected {
-  background-color: @select;
-  color: @background;
+  background-color: @focus;
+  color: @base;
 }
 
 #text {
@@ -49,7 +47,7 @@
 }
 
 #expander-box {
-  background-color: @background;
+  background-color: @base;
   border-radius: 6px;
   margin-top: 4px;
 }
