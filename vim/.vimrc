@@ -11,6 +11,11 @@ set showmode
 set scrolloff=5
 set laststatus=2
 
-set termguicolors
-colorscheme catppuccin_mocha
+" set termguicolors
+" colorscheme catppuccin_mocha
 set background=dark
+
+set hlsearch
+set incsearch 
+set ignorecase
+set smartcase
