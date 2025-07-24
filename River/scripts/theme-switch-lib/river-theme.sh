@@ -1,12 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
 theme="$1"
 
 colors="$XDG_CACHE_HOME/colors/$theme.txt"
 
 if [ ! -f "$colors" ]; then
-  notify-send "River Theme" "'$theme' not found."
-  exit 1
+	echo "River: theme $theme not found!"
+	exit 1
 fi
 
 # Agarrar los hex, agregar 0x y sacarle el #
@@ -21,4 +21,4 @@ riverctl border-color-focused "$focus"
 riverctl border-color-unfocused "$unfocus"
 riverctl border-color-urgent "$urgent"
 
-notify-send "River Theme" "Using $theme colors"
+echo "River: using $theme theme."

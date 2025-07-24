@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 theme="$1"
 colors="$XDG_CACHE_HOME/colors/$theme.txt"
@@ -6,7 +6,7 @@ base="$XDG_CONFIG_HOME/foot/base.ini"
 output="$XDG_CONFIG_HOME/foot/foot.ini"
 
 if [ ! -f "$colors" ]; then
-  notify-send "Foot Theme" "Color theme '$theme' not found!"
+  echo "Foot: theme $theme not found!"
   exit 1
 fi
 
@@ -37,4 +37,4 @@ cp "$base" "$output"
   done
 } >> "$output"
 
-notify-send "Foot Theme" "Using '$theme' theme"
+echo "Foot: using $theme theme."

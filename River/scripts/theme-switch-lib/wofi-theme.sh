@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 theme="$1"
 
@@ -8,8 +8,8 @@ structure="$wofi_dir/base.css"
 output="$wofi_dir/style.css"
 
 if [ ! -f "$colors" ]; then
-  notify-send "Wofi Theme" "'$theme' not found."
-  exit 1
+	echo "Wofi: theme $theme not found!"
+	exit 1
 fi
 
 # Agarrar lineas 17 y 18
@@ -18,10 +18,10 @@ focus=$(sed -n 18p "$colors")
 
 # Mandarlo al style.css de wofi
 {
-  echo "@define-color base $base;"
-  echo "@define-color focus $focus;"
-  echo ""
-  cat "$structure"
+	echo "@define-color base $base;"
+	echo "@define-color focus $focus;"
+	echo ""
+	cat "$structure"
 } > "$output"
 
-notify-send "Wofi Theme" "Using '$theme'"
+echo "Wofi: using $theme theme."
