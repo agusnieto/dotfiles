@@ -186,8 +186,7 @@ done
 riverctl map normal $mod V spawn "cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
 riverctl map normal $mod Escape spawn "powermenu"
 
-riverctl map normal Shift+Alt S spawn "screenshot.sh area"
-riverctl map normal Shfit+Alt A spawn "screenshot.sh save"
+riverctl map normal Shift+Alt S spawn "screenshot.sh"
 
 riverctl map normal Shift+Alt E spawn "wofi-emoji"
 
@@ -229,5 +228,5 @@ riverctl spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 riverctl spawn "cliphist wipe"
 
-last_theme=$(cat "$XDG_CACHE_HOME/colors/last")
-riverctl spawn "theme-switch $last_theme"
+current_theme=$(cat "$XDG_CACHE_HOME/colors/.current")
+riverctl spawn "theme-switch $current_theme"
