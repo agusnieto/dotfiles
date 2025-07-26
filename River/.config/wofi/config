@@ -12,8 +12,8 @@ key_expand=space
 
 matching=fuzzy
 
-hide_search=true
-no_actions=true
+hide_search=false
+no_actions=false
 
 width=350
 height=300
