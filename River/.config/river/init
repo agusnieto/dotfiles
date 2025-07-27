@@ -232,3 +232,8 @@ riverctl spawn "swww-daemon"
 
 current_theme=$(cat "$XDG_CACHE_HOME/colors/.current")
 riverctl spawn "theme-switch $current_theme"
+
+current_wallpaper="$XDG_CACHE_HOME/.swww-wallpaper"
+
+current_wallpaper="$XDG_CACHE_HOME/.swww-wallpaper"
+riverctl spawn "sleep 3 && swww-wallpaper $current_wallpaper"

@@ -17,3 +17,5 @@ swww img "$wallpaper" \
 	--transition-duration 3 \
 	--transition-fps 120 \
 	--transition-pos "$x,$y"
+
+ln -sf "$1" "$XDG_HOME_CACHE/.swww-wallpaper"
