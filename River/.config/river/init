@@ -228,5 +228,7 @@ riverctl spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 riverctl spawn "cliphist wipe"
 
+riverctl spawn "swww-daemon"
+
 current_theme=$(cat "$XDG_CACHE_HOME/colors/.current")
 riverctl spawn "theme-switch $current_theme"
