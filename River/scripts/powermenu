@@ -1,14 +1,14 @@
 #!/bin/bash
 
-options="Apagar\nReiniciar\nBloquear\nSuspender\nHibernar"
+options="Shut Down\nReboot\nLock\nSuspend\nHibernate"
 
 chosen=$(echo -e "$options" | wofi -d --height=180  --cache-file /dev/null)
 
 case "$chosen" in
-    "Apagar") systemctl poweroff ;;
-    "Reiniciar") systemctl reboot ;;
-    "Bloquear") loginctl lock-session ;;
-    "Suspender") systemctl suspend ;;
-    "Hibernar") systemctl hibernate ;;
+    "Shut Down") systemctl poweroff ;;
+    "Reboot") systemctl reboot ;;
+    "Lock") loginctl lock-session ;;
+    "Suspend") systemctl suspend ;;
+    "Hibernate") systemctl hibernate ;;
     *) exit 0 ;;
 esac

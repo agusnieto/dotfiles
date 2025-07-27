@@ -7,4 +7,4 @@ grim -g "$(slurp)" "$filename"
 
 wl-copy < "$filename"
 
-notify-send "Captura guardada y copiada" "$filename"
+notify-send "Screenshot saved"

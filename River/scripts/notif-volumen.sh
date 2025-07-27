@@ -9,10 +9,10 @@ vol_percent=$(echo "$vol_line" | grep -oP '\d+(\.\d+)?' | awk '{printf "%d", $1 
 is_muted=$(echo "$vol_line" | grep -o '\[MUTED\]')
 
 if [[ "$is_muted" == "[MUTED]" || "$vol_percent" -eq 0 ]]; then
-    dunstify -a "Volumen" -u low -i audio-volume-muted \
-      -h string:x-dunst-stack-tag:$msgTag "Volumen: Silenciado"
+    dunstify -a "Volume" -u low -i audio-volume-muted \
+      -h string:x-dunst-stack-tag:$msgTag "Volume: Silenciado"
 else
-    dunstify -a "Volumen" -u low -i audio-volume-high \
+    dunstify -a "Volume" -u low -i audio-volume-high \
       -h string:x-dunst-stack-tag:$msgTag \
-      -h int:value:"$vol_percent" "Volumen: ${vol_percent}%"
+      -h int:value:"$vol_percent" "Volume: ${vol_percent}%"
 fi

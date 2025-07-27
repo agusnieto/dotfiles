@@ -1,0 +1,19 @@
+#!/bin/bash
+
+wallpaper="$1" # Path al wallpaper
+
+if [ ! -f "$1" ]; then
+	notify-send "Wallpaper" "Image not found!"
+	exit 1
+fi
+
+x=$(printf "0.%03d" $((RANDOM % 1000)))
+y=$(printf "0.%03d" $((RANDOM % 1000)))
+
+echo "x = $x, y = $y"
+
+swww img "$wallpaper" \
+	--transition-type grow \
+	--transition-duration 3 \
+	--transition-fps 120 \
+	--transition-pos "$x,$y"
