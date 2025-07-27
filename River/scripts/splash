@@ -1,0 +1,7 @@
+#!/bin/bash
+splash="$XDG_PICTURES_DIR/arch.png"
+wallpaper="$(readlink -f "$XDG_CACHE_HOME/.swww-wallpaper")"
+
+swww-wallpaper "$splash"
+sleep 3
+swww-wallpaper "$wallpaper"

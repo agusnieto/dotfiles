@@ -169,14 +169,14 @@ riverctl map normal $mod S set-focused-tags $tag9
 #------------#
 
 for mode in normal locked; do
-    riverctl map -repeat $mode None XF86AudioRaiseVolume spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1 && notif-volumen.sh'
-    riverctl map -repeat $mode None XF86AudioLowerVolume spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && notif-volumen.sh'
-    riverctl map $mode None XF86AudioMute spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && notif-volumen.sh'
+    riverctl map -repeat $mode None XF86AudioRaiseVolume spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1 && notif-volume'
+    riverctl map -repeat $mode None XF86AudioLowerVolume spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && notif-volume'
+    riverctl map $mode None XF86AudioMute spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && notif-volume'
 
     riverctl map $mode None XF86MuteMic spawn 'wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle'
 
-    riverctl map -repeat $mode None XF86MonBrightnessUp spawn 'brightnessctl set +5% && notif-brightness.sh'
-    riverctl map -repeat $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%- && notif-brightness.sh'
+    riverctl map -repeat $mode None XF86MonBrightnessUp spawn 'brightnessctl set +5% && notif-brightness'
+    riverctl map -repeat $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%- && notif-brightness'
 done
 
 #--------------#
@@ -186,7 +186,7 @@ done
 riverctl map normal $mod V spawn "cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
 riverctl map normal $mod Escape spawn "powermenu"
 
-riverctl map normal Shift+Alt S spawn "screenshot.sh"
+riverctl map normal Shift+Alt S spawn "screenshot"
 
 riverctl map normal Shift+Alt E spawn "wofi-emoji"
 
@@ -233,7 +233,4 @@ riverctl spawn "swww-daemon"
 current_theme=$(cat "$XDG_CACHE_HOME/colors/.current")
 riverctl spawn "theme-switch $current_theme"
 
-current_wallpaper="$XDG_CACHE_HOME/.swww-wallpaper"
-
-current_wallpaper="$XDG_CACHE_HOME/.swww-wallpaper"
-riverctl spawn "sleep 3 && swww-wallpaper $current_wallpaper"
+riverctl spawn "splash"

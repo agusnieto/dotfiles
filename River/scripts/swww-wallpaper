@@ -13,9 +13,9 @@ y=$(printf "0.%03d" $((RANDOM % 1000)))
 echo "x = $x, y = $y"
 
 swww img "$wallpaper" \
-	--transition-type grow \
+	--transition-type any \
 	--transition-duration 3 \
 	--transition-fps 120 \
 	--transition-pos "$x,$y"
 
-ln -sf "$1" "$XDG_HOME_CACHE/.swww-wallpaper"
+ln -sf "$1" "$XDG_CACHE_HOME/.swww-wallpaper"
