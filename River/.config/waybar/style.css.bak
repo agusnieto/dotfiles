@@ -1,0 +1,97 @@
+@define-color white #ebdbb2; 	/* 15 */
+@define-color black #282828; 	/*  0 */
+@define-color red #cc241d; 	/*  1 */
+@define-color unfocus #928374; 	/*  8 */
+@define-color focused #ebdbb2; 	/* 15 */
+@define-color base #1d2021; 	/* 16 */
+@define-color special #fbf1c7; 	/* 17 */
+
+* {
+    font-family: Terminess Nerd Font;
+    font-size: 13px;
+    color: @white; /* PONER BLANCO */
+}
+
+window#waybar {
+    background-color: @base; /* PONER BASE */
+    border-style: solid;
+    border-width: 4;
+    border-color: @unfocus; /* PONER BORDE SIN FOCO */
+}
+
+button {
+    box-shadow: inset 0 -4px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -4px @special; /* PONER ESPECIAL */
+}
+
+#tags {
+    margin-left: 15px; /* ESPACIO IZQ */
+}
+
+#tags button {
+    background-color: transparent;
+}
+
+#tags button.focused {
+    box-shadow: inset 0 -4px @focused; /* PONER Focus */
+}
+
+#tags button.urgent {
+    box-shadow: inset 0 -4px @red; /* PONER ROJO */
+}
+
+#clock,
+#battery,
+#backlight,
+#custom-pipewire,
+#tags button,
+#tray {
+}
+
+#clock {
+}
+
+#battery {
+    margin-right: 25px; /* ESPACIO DERECHA */
+}
+
+@keyframes blink {
+    to {
+        background-color: @white; /* CAMBIAR A BLANCO */
+        color: @black; /* CAMBIAR A NEGRO */
+    }
+}
+
+#battery.critical {
+    background-color: @red; /* CAMBIAR A ROJO */
+    color: @white; /* PONER BLANCO */
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#backlight {
+}
+
+#custom-pipewire {
+}
+
+#tray {
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red; /* PONER ROJO */
+}

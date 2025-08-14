@@ -1,0 +1,64 @@
+{
+    "layer": "top",
+    "position": "top",
+    "exclusive": true,
+    "passthrough": false,
+    "reload_style_on_change": true,
+    "height": 35,
+    //"width": 1000,
+    "spacing": 10,
+    //"margin": 15,
+    "margin-top": 15,
+    "margin-left": 15,
+    "margin-right": 15,
+    "modules-left": [
+        "river/tags"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+	"custom/pipewire",
+        "backlight",
+        "battery"
+    ],
+    "river/tags": {
+	"num-tags": 8,
+        "tag-labels": ["一", "二", "三", "四", "五", "六", "七", "八"],
+	"hide-vacant": true
+    },
+    "clock": {
+        "timezone": "America/Argentina/Cordoba",
+        "tooltip": false,
+        "format": "{:%a %H:%M %d/%m}"
+    },
+    "tray": {
+        "spacing": 5,
+        "show-passive-items": false,
+        "reverse-direction": true
+    },
+    "custom/pipewire": {
+	"tooltip": false,
+	//"max-length": 6,
+	"exec": "~/.local/scripts/waybar-audio"
+	//"on-click": "pavucontrol",
+	//"on-click-right": "qpwgraph"
+    },
+    "backlight": {
+        "tooltip": false,
+        "format": "{percent}% {icon} ",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "tooltip": false,
+        "states": {
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% ",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    }
+}
