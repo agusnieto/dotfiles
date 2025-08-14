@@ -79,6 +79,8 @@ riverctl hide-cursor when-typing enabled
 riverctl set-cursor-warp disabled
 riverctl set-repeat 60 250
 
+riverctl set-cursor-warp on-output-change
+
 riverctl xcursor-theme "$cursor" "$size"
 
 #----------------------#
@@ -113,6 +115,7 @@ riverctl map normal $mod R spawn "$menu"
 riverctl map normal $mod E spawn "$files"
 riverctl map normal $mod C close
 riverctl map normal $mod M exit
+riverctl map normal $mod O focus-output next
 
 # Ventanas
 riverctl map normal $mod F toggle-float
@@ -190,6 +193,8 @@ riverctl map normal Shift+Alt S spawn "screenshot"
 
 riverctl map normal Shift+Alt E spawn "wofi-emoji"
 
+riverctl map normal Shift+Alt K spawn "killall waybar && sleep 1 && waybar &"
+
 # Lock mode para despues ---
 
 #-------#
@@ -219,18 +224,23 @@ riverctl rule-add -app-id "firefox" -title "Library" float
 # Autostart #
 #-----------#
 
+# Daemons
 riverctl spawn dunst
-
 riverctl spawn "wl-paste --watch cliphist store"
-
 riverctl spawn "thunar --daemon"
 riverctl spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-
 riverctl spawn "cliphist wipe"
-
 riverctl spawn "swww-daemon"
 
+# Barra
+riverctl spawn "waybar &"
+
+# Applets
+riverctl spawn "blueman-applet &"
+riverctl spawn "nm-applet &"
+
+# Otros
 current_theme=$(cat "$XDG_CACHE_HOME/colors/.current")
 riverctl spawn "theme-switch $current_theme"
 
-riverctl spawn "splash"
+riverctl spawn "sleep 3 && splash"
