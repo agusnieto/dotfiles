@@ -1,10 +1,10 @@
-@define-color white #d3c6aa;
-@define-color black #272e33;
-@define-color red #e67e80;
-@define-color unfocus #4f5b58;
-@define-color focused #d3c6aa;
-@define-color base #1e2326;
-@define-color special #a7c080;
+@define-color white #fefcff;
+@define-color black #26233a;
+@define-color red #eb6f92;
+@define-color unfocus #47435d;
+@define-color focused #fefcff;
+@define-color base #191724;
+@define-color special #eb6f92;
 
 * {
     font-family: Terminess Nerd Font;
@@ -27,7 +27,7 @@ button {
 
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -4px @special; /* PONER ESPECIAL */
+    box-shadow: inset 0 -4px @focused; /* PONER ESPECIAL */
 }
 
 #tags {
@@ -39,7 +39,7 @@ button:hover {
 }
 
 #tags button.focused {
-    box-shadow: inset 0 -4px @focused; /* PONER Focus */
+    box-shadow: inset 0 -4px @special; /* PONER Focus */
 }
 
 #tags button.urgent {
