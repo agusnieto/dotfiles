@@ -1,22 +1,22 @@
-@define-color white #fefcff;
-@define-color black #26233a;
-@define-color red #eb6f92;
-@define-color unfocus #47435d;
-@define-color focused #fefcff;
-@define-color base #191724;
-@define-color special #eb6f92;
+@define-color white #D4BE98;
+@define-color black #3C3836;
+@define-color red #EA6962;
+@define-color unfocus #3C3836;
+@define-color focused #D4BE98;
+@define-color base #282828;
+@define-color special #89B482;
 
 * {
     font-family: Terminess Nerd Font;
     font-size: 13px;
-    color: @white; /* PONER BLANCO */
+    color: @white;
 }
 
 window#waybar {
-    background-color: @base; /* PONER BASE */
+    background-color: @base;
     border-style: solid;
     border-width: 4;
-    border-color: @unfocus; /* PONER BORDE SIN FOCO */
+    border-color: @unfocus;
 }
 
 button {
@@ -27,11 +27,11 @@ button {
 
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -4px @focused; /* PONER ESPECIAL */
+    box-shadow: inset 0 -4px @focused;
 }
 
 #tags {
-    margin-left: 15px; /* ESPACIO IZQ */
+    margin-left: 15px;
 }
 
 #tags button {
@@ -39,11 +39,11 @@ button:hover {
 }
 
 #tags button.focused {
-    box-shadow: inset 0 -4px @special; /* PONER Focus */
+    box-shadow: inset 0 -4px @special;
 }
 
 #tags button.urgent {
-    box-shadow: inset 0 -4px @red; /* PONER ROJO */
+    box-shadow: inset 0 -4px @red;
 }
 
 #clock,
@@ -58,19 +58,19 @@ button:hover {
 }
 
 #battery {
-    margin-right: 25px; /* ESPACIO DERECHA */
+    margin-right: 25px;
 }
 
 @keyframes blink {
     to {
-        background-color: @white; /* CAMBIAR A BLANCO */
-        color: @black; /* CAMBIAR A NEGRO */
+        background-color: @white;
+        color: @black;
     }
 }
 
 #battery.critical {
-    background-color: @red; /* CAMBIAR A ROJO */
-    color: @white; /* PONER BLANCO */
+    background-color: @red;
+    color: @white;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -93,5 +93,5 @@ button:hover {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: @red; /* PONER ROJO */
+    background-color: @red;
 }
