@@ -209,6 +209,7 @@ riverctl rule-add -app-id "thunar" ssd
 riverctl rule-add -app-id "blueman-manager" ssd
 riverctl rule-add -app-id "io.bassi.Amberol" ssd
 riverctl rule-add -app-id "xarchiver" ssd
+riverctl rule-add -app-id "steam" -title "Steam" ssd
 
 # Ventanas que se inician flotantes
 riverctl rule-add -app-id "imv" float
@@ -216,6 +217,10 @@ riverctl rule-add -app-id "mpv" float
 riverctl rule-add -app-id "blueman-manager" float
 riverctl rule-add -app-id "io.bassi.Amberol" float
 riverctl rule-add -app-id "xarchiver" float
+riverctl rule-add -app-id "steam" float
+
+# Ventanas no flotantes
+riverctl rule-add -app-id "steam" -title "Steam" no-float
 
 # Ventanas de firefox
 riverctl rule-add -app-id "firefox" -title "Library" float
