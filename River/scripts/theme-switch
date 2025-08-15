@@ -13,5 +13,6 @@ fi
 "$libdir/wofi-theme.sh" "$theme"
 "$libdir/river-theme.sh" "$theme"
 "$libdir/dunst-theme.sh" "$theme"
+"$libdir/waybar-theme.sh" "$theme"
 
 echo "$1" > "$XDG_CACHE_HOME/colors/.current"
