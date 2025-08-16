@@ -31,7 +31,7 @@
     "clock": {
         "timezone": "America/Argentina/Cordoba",
         "tooltip": false,
-        "format": "{:%a %H:%M %d/%m}"
+        "format": "{:%a %H:%M %d-%m}"
     },
     "tray": {
         "spacing": 5,
