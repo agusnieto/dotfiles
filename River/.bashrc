@@ -34,7 +34,7 @@ alias lla='ls -la'
 alias lt='ls --tree'
 
 alias cbonsai='cbonsai -l -i'
-alias cmatrix='cmatrix -ba'
+alias cmatrix='cmatrix -kba'
 
 alias v='vim'
 
