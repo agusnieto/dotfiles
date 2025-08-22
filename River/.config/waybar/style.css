@@ -1,10 +1,10 @@
-@define-color white #D4BE98;
-@define-color black #3C3836;
-@define-color red #EA6962;
-@define-color unfocus #3C3836;
-@define-color focused #D4BE98;
-@define-color base #282828;
-@define-color special #89B482;
+@define-color white #fefcff;
+@define-color black #26233a;
+@define-color red #eb6f92;
+@define-color unfocus #47435d;
+@define-color focused #fefcff;
+@define-color base #191724;
+@define-color special #eb6f92;
 
 * {
     font-family: Terminess Nerd Font;
