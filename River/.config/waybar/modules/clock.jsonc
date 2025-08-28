@@ -1,0 +1,17 @@
+{
+	"clock#time": {
+		"timezone": "America/Argentina/Cordoba",
+		"tooltip": false,
+		"format": "{:%H:%M}"
+	},
+	"clock#date": {
+		"timezone": "America/Argentina/Cordoba",
+		"tooltip": false,
+		"format": "{:%d-%m}"
+	},
+	"clock#day": {
+		"timezone": "America/Argentina/Cordoba",
+		"tooltip": false,
+		"format": "{:%a}"
+	}
+}

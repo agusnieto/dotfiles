@@ -1,0 +1,9 @@
+{
+	"custom/pipewire": {
+		"tooltip": false,
+		//"max-length": 6,
+		"exec": "~/.local/scripts/waybar-audio"
+		//"on-click": "pavucontrol",
+		//"on-click-right": "qpwgraph"
+	}
+}
