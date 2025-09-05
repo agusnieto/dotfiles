@@ -28,7 +28,7 @@
 @define-color memory	@braqua;
 @define-color cpu	@green;
 @define-color temp	@brgreen;
-@define-color tray	@bryellow;
+@define-color tray	@bg2;
 @define-color battery	@aqua;
 @define-color date	@black;
 @define-color time	@white;
@@ -58,7 +58,7 @@
 #waybar {
 	background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
 	color: @white;
-	font-family: DejaVu Sans Mono, Siji;
+	font-family: Terminess Nerd Font Propo, Siji;
 	font-size: 8pt;
 	/*font-weight: bold;*/
 }
