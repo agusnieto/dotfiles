@@ -1,7 +1,7 @@
 [global]
 separator_color= frame
-timeout = 10
-font = Terminess Nerd Font 15
+timeout = 3
+font = Terminess Nerd Font 8
 
 [global]
 background = "#26233a"
