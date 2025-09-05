@@ -38,6 +38,8 @@ alias cmatrix='cmatrix -kba'
 
 alias v='vim'
 
+alias x-dlp='yt-dlp --cookies-from-browser firefox'
+
 # Ejecutar al abrir
 clear
 pfetch
