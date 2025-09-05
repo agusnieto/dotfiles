@@ -50,7 +50,7 @@ bg="0x24273a"
 focus="0xc6a0f6"
 unfocus="0xb7bdf8"
 urgent="0xed8796"
-width=4
+width=1
 cursor="Hackneyed"
 size=36
 
