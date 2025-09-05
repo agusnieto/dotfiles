@@ -1,0 +1,49 @@
+{
+// Includes
+	"include": [ 
+		"modules/*.jsonc",
+		"modules/custom/*.jsonc",
+		"modules/river/*.jsonc"
+	],
+// Configuration
+	"layer": "top",
+	"position": "top",
+	"exclusive": true,
+	"passthrough": false,
+	"reload_style_on_change": true,
+	"height": 40,
+	//"width": 1000,
+	"spacing": 5,
+	//"margin": 15,
+	"margin-top": 15,
+	"margin-left": 15,
+	"margin-right": 15,
+// Modules
+	"modules-left": [
+		"river/tags"
+	],
+	"modules-center": [
+		"clock#day",
+		"clock#time",
+		"clock#date"
+	],
+	"modules-right": [
+		"group/system",
+		"group/hardware"
+	],
+// Groups
+	"group/system": {
+		"orientation": "horizontal",
+		"modules": [
+			"tray"
+		]
+	},
+	"group/hardware": {
+		"orientation": "horizontal",
+		"modules": [
+			"custom/pipewire",
+			"backlight",
+			"battery"
+		]
+	}
+}
