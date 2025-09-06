@@ -151,7 +151,7 @@
 
 	"custom/launcher": {
 		"format": "󰣇",
-		"on-click": "wofi -show drun",
+		"on-click": "wofi --show drun",
 		"tooltip": false
 	},
 

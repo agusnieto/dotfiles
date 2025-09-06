@@ -1,35 +1,36 @@
-/* Colors (rose-pine) */
-@define-color black    #26233a;
-@define-color red      #eb6f92;
-@define-color green    #9ccfd8;
-@define-color yellow   #f6c177;
-@define-color blue     #31748f;
-@define-color purple   #c4a7e7;
-@define-color aqua     #ebbcba;
-@define-color gray     #e0def4;
-@define-color brgray   #47435d;
-@define-color brred    #ff98ba;
-@define-color brgreen  #c5f9ff;
-@define-color bryellow #ffeb9e;
-@define-color brblue   #5b9ab7;
-@define-color brpurple #eed0ff;
-@define-color braqua   #ffe5e3;
-@define-color white    #fefcff;
-@define-color bg2      #191724;
-@define-color special  #eb6f92;
+/* Colors (gruvbox) */
+@define-color black    #282828;
+@define-color red      #cc241d;
+@define-color green    #98971a;
+@define-color yellow   #d79921;
+@define-color blue     #458588;
+@define-color purple   #b16286;
+@define-color aqua     #689d6a;
+@define-color gray     #a89984;
+@define-color brgray   #928374;
+@define-color brred    #fb4934;
+@define-color brgreen  #b8bb26;
+@define-color bryellow #fabd2f;
+@define-color brblue   #83a598;
+@define-color brpurple #d3869b;
+@define-color braqua   #8ec07c;
+@define-color white    #ebdbb2;
+@define-color bg2      #1d2021;
+@define-color special  #fbf1c7;
+
 
 @define-color warning 	@bryellow;
 @define-color critical	@red;
 @define-color unfocused	@bg2;
 @define-color focused	@braqua;
 @define-color inactive	@purple;
-@define-color sound	@brpurple;
-@define-color network	@purple;
-@define-color memory	@braqua;
-@define-color cpu	@green;
+@define-color sound	@brblue;
+@define-color network	@brpurple;
+@define-color memory	@gray;
+@define-color cpu	@bryellow;
 @define-color temp	@brgreen;
 @define-color tray	@bg2;
-@define-color battery	@aqua;
+@define-color battery	@braqua;
 @define-color date	@black;
 @define-color time	@white;
 
@@ -166,7 +167,7 @@
 
 #cpu {
 	background: @cpu;
-	color: @white;
+	color: @black;
 }
 
 #temperature {
