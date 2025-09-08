@@ -195,6 +195,8 @@ riverctl map normal Shift+Alt E spawn "wofi-emoji"
 
 riverctl map normal Shift+Alt K spawn "killall waybar && sleep 1 && waybar &"
 
+riverctl map normal Shift+Alt P spawn "wl-color-picker clipboard"
+
 # Lock mode para despues ---
 
 #-------#
