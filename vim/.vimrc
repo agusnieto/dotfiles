@@ -12,7 +12,7 @@ set scrolloff=5
 set laststatus=2
 
 " set termguicolors
-" colorscheme catppuccin_mocha
+colorscheme gruvbox
 set background=dark
 
 set hlsearch

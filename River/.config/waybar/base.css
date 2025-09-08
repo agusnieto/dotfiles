@@ -1,4 +1,3 @@
-
 @define-color warning 	@bryellow;
 @define-color critical	@red;
 @define-color unfocused	@bg2;
@@ -109,8 +108,8 @@
 
 /* Active (on focused output) */
 #tags button.focused {
-	color: @black;
-	background: @special;
+	color: @special;
+	background: @unfocused;
 }
 
 /* Contains an urgent window */
