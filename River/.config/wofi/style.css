@@ -1,5 +1,5 @@
-@define-color base #1d2021;
-@define-color focus #fbf1c7;
+@define-color base #1e2326;
+@define-color focus #a7c080;
 
 #window {
   border: 4px solid @focus;

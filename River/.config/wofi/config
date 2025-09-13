@@ -10,7 +10,7 @@ key_left=Ctrl-h
 key_right=Ctrl-l
 key_expand=space
 
-matching=fuzzy
+matching=contains
 
 hide_search=false
 no_actions=false
