@@ -18,7 +18,6 @@
 @define-color bg2      #282828;
 @define-color special  #89B482;
 
-
 @define-color warning 	@bryellow;
 @define-color critical	@red;
 @define-color unfocused	@bg2;
