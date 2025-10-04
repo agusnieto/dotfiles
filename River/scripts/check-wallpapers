@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+shopt -s nullglob
+
+mkdir -p ./small
+
+for img in *.{jpg,jpeg,png}; do
+	read width height < <(identify -format "%w %h" "$img")
+
+	if ((width < 3200 || height < 2000 )); then
+		echo "$img (${width}x${height})"
+		mv "$img" ./small
+	fi
+done
+
+shopt -u nullglob
+
+exit 0

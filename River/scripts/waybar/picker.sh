@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Uso: porcentaje "a b c d e"
 # Ej: ./picker.sh 95 "a b c d e"

@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 splash="$XDG_PICTURES_DIR/arch.png"
 wallpaper="$(readlink -f "$XDG_CACHE_HOME/.swww-wallpaper")"
 

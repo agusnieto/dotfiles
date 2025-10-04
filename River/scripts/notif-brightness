@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 msgTag="brightness-indicator"
 percent=$(brightnessctl g --machine-readable | cut -d, -f4 | tr -d '%')

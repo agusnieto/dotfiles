@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+shopt -s nullglob
+
+count=1
+
+for f in *; do
+	[[ -f "$f" ]] || continue
+
+	ext="${f##*.}"
+	name="${count}.${ext}"
+	echo "$f -> $name"
+	mv -- "$f" "$name"
+	((count++))
+done
+
+shopt -u nullglob
+
+exit 0

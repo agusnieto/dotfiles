@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 msgTag="volume-indicator"
 sink="@DEFAULT_AUDIO_SINK@"

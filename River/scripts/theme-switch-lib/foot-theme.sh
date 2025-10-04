@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 theme="$1"
 colors="$XDG_CACHE_HOME/colors/$theme.txt"

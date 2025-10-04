@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+shopt -s nullglob
+
+for i in *.{jpg,jpeg,png}; do
+	swww-wallpaper "$i"
+	echo "$i"
+	sleep 5
+done
+
+shopt -u nullglob
+
+exit 0

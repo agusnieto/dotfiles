@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 options="Shut Down\nReboot\nLock\nSuspend\nHibernate"
 
