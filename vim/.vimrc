@@ -20,3 +20,5 @@ set smartcase
 
 " tabs = 4 spaces (Python)
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+" set list
+set listchars=tab:>·,space:·,trail:~
