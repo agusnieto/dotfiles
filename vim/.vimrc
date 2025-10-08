@@ -12,6 +12,13 @@ set scrolloff=5
 set laststatus=2
 
 set background=dark
+set notermguicolors
+hi LineNr ctermfg=DarkGray
+hi CursorLineNr ctermfg=White
+
+" hi LineNr guifg=#555555
+" hi CursorLineNr guifg=#cccccc
+
 
 set hlsearch
 set incsearch 
