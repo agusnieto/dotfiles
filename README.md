@@ -4,8 +4,8 @@
 
 ---
 
-```markdown
-Algunos screenshots a lo largo del tiempo
+```typst
+= algunos screenshots a lo largo del tiempo =
 ```
 
 ![image](./fetchs/2025-07-05.png)
