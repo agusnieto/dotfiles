@@ -2,6 +2,7 @@ set nocompatible
 syntax on
 
 set relativenumber
+set number
 set ruler
 
 set backspace=indent,eol,start
@@ -29,3 +30,5 @@ set smartcase
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 " set list
 set listchars=tab:>·,space:·,trail:~
+
+" anashey emacs god
