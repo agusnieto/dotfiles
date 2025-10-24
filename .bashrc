@@ -13,7 +13,7 @@ blu='\[\033[34m\]'
 # Prompt
 PS1="\w${blu} \$${clr} "			# ~ $
 # PS1="[\w] ${cyn}$ ${clr}"			# [~] $
-# PS1="(\u@${cyn}\h${clr}) [\w] ${cyn}$ ${clr}"	# (neho@arch) [~] $
+# PS1="(\u@${cyn}\h${clr}) [\w] ${cyn}$ ${clr}"	# (neo@arch) [~] $
 
 # Calidad de vida
 HISTCONTROL=ignoredups

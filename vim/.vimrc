@@ -17,18 +17,14 @@ set notermguicolors
 hi LineNr ctermfg=DarkGray
 hi CursorLineNr ctermfg=White
 
-" hi LineNr guifg=#555555
-" hi CursorLineNr guifg=#cccccc
-
-
 set hlsearch
 set incsearch 
 set ignorecase
 set smartcase
 
+set autoindent
 " tabs = 4 spaces (Python)
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 " set list
 set listchars=tab:>·,space:·,trail:~
 
-" anashey emacs god
