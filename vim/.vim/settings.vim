@@ -9,7 +9,7 @@ set relativenumber
 set number
 set ruler
 set showcmd
-set showmode
+set noshowmode
 set scrolloff=5
 set laststatus=2
 
