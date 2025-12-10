@@ -33,7 +33,7 @@ vim.diagnostic.config({
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     local bufnr = args.buf
-    local opts = { buffer = bufnr, silent = true }
+    local opts = { buffer = bufnr, silent = false }
 
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)		-- go def
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)		-- go decla

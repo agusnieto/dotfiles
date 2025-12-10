@@ -2,6 +2,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 
+-- bold double none rounded shadow single solid
+vim.opt.winborder = "rounded"
 vim.opt.shiftwidth = 4
 
 vim.opt.clipboard = "unnamedplus"

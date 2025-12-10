@@ -1,5 +1,6 @@
 -- neovim/nvim-lspconfig
 -- :help vim.lsp.Config
+
 vim.lsp.config('lua_ls', {
   cmd = { 'lua-language-server' },
   filetypes = { 'lua' },
