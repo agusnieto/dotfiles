@@ -16,8 +16,8 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_BIN_HOME="$HOME/.local/bin"
 
 # Variables
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # PATH
 export PATH="$XDG_BIN_HOME:$HOME/.local/scripts:$HOME/.dotnet/tools:$PATH"
