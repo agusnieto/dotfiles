@@ -22,7 +22,7 @@ set smartcase
 " indentation & tabs
 set smartindent
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4 " PEP8 indentation
-set listchars=tab:>·,space:·,trail:
+set listchars=tab:>·,space:·,trail:~
 
 " colors
 set background=dark
