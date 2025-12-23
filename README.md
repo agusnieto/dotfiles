@@ -1,12 +1,8 @@
 ```markdown
-> archivos de configuracion que uso
+> my configs
 ```
 
 ---
-
-```typst
-= algunos screenshots a lo largo del tiempo =
-```
 
 ![image](./fetchs/2025-07-05.png)
 
