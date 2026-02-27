@@ -1,0 +1,5 @@
+net-misc/networkmanager iwd -wpa_supplicant -ppp -wext bluetooth modemmanager
+net-wireless/wpa_supplicant dbus
+# required by www-client/firefox-140.6.0::gentoo[system-libvpx]
+# required by www-client/firefox (argument)
+>=media-libs/libvpx-1.15.2 postproc

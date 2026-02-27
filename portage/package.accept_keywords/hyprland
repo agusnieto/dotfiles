@@ -1,0 +1,9 @@
+app-misc/brightnessctl
+app-misc/nwg-look
+dev-cpp/sdbus-c++
+gui-apps/hyprshot
+gui-libs/xdg-desktop-portal-hyprland
+net-wireless/bluez-tools
+sys-auth/hyprpolkitagent
+x11-apps/xcur2png
+x11-misc/libinput-gestures
