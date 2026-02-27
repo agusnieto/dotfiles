@@ -5,16 +5,14 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-cyn='\[\033[36m\]'
+yel='\[\033[33m\]'
 clr='\[\033[00m\]'
 blu='\[\033[34m\]'
 mgt='\[\033[35m\]'
 
 # Prompt
-# PS1="\w${blu} \$${clr} "				# ~ $
-# PS1="[\w] ${cyn}$ ${clr}"				# [~] $
-# PS1="(\u@${cyn}\h${clr}) [\w] ${cyn}$ ${clr}"		# (neo@gentoo) [~] $
-PS1="${mgt}\u${clr}@${mgt}\h${clr} \w ${mgt}$ ${clr}"	# neo@gentoo ~ $
+PS1="${yel}  ${clr}\w${mgt}   ${clr}"			#   ~ 
+# PS1="${mgt}${clr}  \w${blu} \$${clr} "		#  ~ $
 
 # Quality of life
 HISTCONTROL=ignoredups
@@ -35,8 +33,6 @@ alias lla='ls -la'
 alias lt='ls --tree'
 
 alias cbonsai='cbonsai -l -i'
-
-alias v='vim'
 
 alias x-dlp='yt-dlp --cookies-from-browser firefox'
 
