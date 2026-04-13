@@ -11,8 +11,9 @@ blu='\[\033[34m\]'
 mgt='\[\033[35m\]'
 
 # Prompt
-PS1="${yel}  ${clr}\w${mgt}   ${clr}"			#   ~ 
-# PS1="${mgt}${clr}  \w${blu} \$${clr} "		#  ~ $
+#PS1="${yel}  ${clr}\w${mgt}   ${clr}"	#   ~ 
+#PS1="${mgt}${clr}  \w${blu} \$${clr} "	#  ~ $
+PS1="${yel} ${clr} \w${blu} \$${clr} "		#  ~ $
 
 # Quality of life
 HISTCONTROL=ignoredups
