@@ -11,8 +11,6 @@ blu='\[\033[34m\]'
 mgt='\[\033[35m\]'
 
 # Prompt
-#PS1="${yel}  ${clr}\w${mgt}   ${clr}"	#   ~ 
-#PS1="${mgt}${clr}  \w${blu} \$${clr} "	#  ~ $
 PS1="${yel} ${clr} \w${blu} \$${clr} "		#  ~ $
 
 # Quality of life
@@ -32,7 +30,6 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
-
 alias cbonsai='cbonsai -l -i'
 
 alias x-dlp='yt-dlp --cookies-from-browser firefox'
@@ -61,6 +58,9 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+# fzf
+eval "$(fzf --bash)"
 
 # Zoxide
 eval "$(zoxide init bash)"
