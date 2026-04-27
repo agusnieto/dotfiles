@@ -51,14 +51,54 @@
 #+end_src
 
 * Packages
+** which-key
 #+begin_src emacs-lisp
   (use-package which-key
     :ensure t
     :init
     (which-key-mode))
+#+end_src
 
-  (use-package beacon
+** beacon
+#+begin_src emacs-lisp
+    (use-package beacon
+      :ensure t
+      :init
+      (beacon-mode 1))
+#+end_src
+
+** IDO
+#+begin_src emacs-lisp
+  (setq ido-enable-flex-matching nil)
+  (setq ido-create-new-buffer 'always)
+  (setq ido-everywhere t)
+  (ido-mode 1)
+#+end_src
+
+** ido-vertical
+#+begin_src emacs-lisp
+  (use-package ido-vertical-mode
     :ensure t
     :init
-    (beacon-mode 1))
+    (ido-vertical-mode 1))
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only)
+#+end_src
+
+** smex
+#+begin_src emacs-lisp
+  (use-package smex
+    :ensure t
+    :init (smex-initialize)
+    :bind
+    ("M-x" . smex))
+#+end_src
+
+** ibuffers
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-x b") 'ibuffer)
+#+end_src
+
+** switch buffers
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 #+end_src
