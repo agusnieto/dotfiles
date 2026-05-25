@@ -1,5 +1,5 @@
-* Terminal
-** Bash default shell
+* Emacs
+** ansi-term
 #+begin_src emacs-lisp
   (defvar my-term-shell "/bin/bash")
   (defadvice ansi-term (before force-bash)
@@ -7,8 +7,7 @@
   (ad-activate 'ansi-term)
 #+end_src
 
-* Emacs
-** Line
+** Line mode
 #+begin_src emacs-lisp
   (defalias 'yes-or-no-p 'y-or-n-p)
 #+end_src
@@ -26,7 +25,7 @@
   ;; (setq inhibit-startup-message t)
 #+end_src
 
-** Backup Files
+** Backup / Auto Save
 #+begin_src emacs-lisp
   (setq make-backup-file nil)
   (setq auto-save-default nil)
@@ -67,7 +66,7 @@
       (beacon-mode 1))
 #+end_src
 
-** IDO
+** ido
 #+begin_src emacs-lisp
   (setq ido-enable-flex-matching nil)
   (setq ido-create-new-buffer 'always)
@@ -93,12 +92,35 @@
     ("M-x" . smex))
 #+end_src
 
-** ibuffers
+** ibuffers keymap
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-x b") 'ibuffer)
 #+end_src
 
-** switch buffers
+** ido switch buffers keymap
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+#+end_src
+
+** avy
+#+begin_src emacs-lisp
+  (use-package avy
+    :ensure t
+    :bind
+    ("M-s" . avy-goto-char))
+#+end_src
+
+** switch-window
+#+begin_src emacs-lisp
+  (use-package switch-window
+    :ensure t
+    :config
+    (setq switch-window-input-style 'minibuffer)
+    (setq switch-window-increase 4)
+    (setq switch-window-threshold 2)
+    (setq switch-window-shortcut-style 'qwerty)
+    (setq switch-window-qwerty-shortcuts
+  	'("a" "s" "d" "f" "j" "k" "l"))
+    :bind
+    ([remap other-window] . switch-window))
 #+end_src

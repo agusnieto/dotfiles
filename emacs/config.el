@@ -59,3 +59,20 @@
 (global-set-key (kbd "C-x b") 'ibuffer)
 
 (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+
+(use-package avy
+  :ensure t
+  :bind
+  ("M-s" . avy-goto-char))
+
+(use-package switch-window
+  :ensure t
+  :config
+  (setq switch-window-input-style 'minibuffer)
+  (setq switch-window-increase 4)
+  (setq switch-window-threshold 2)
+  (setq switch-window-shortcut-style 'qwerty)
+  (setq switch-window-qwerty-shortcuts
+	'("a" "s" "d" "f" "j" "k" "l"))
+  :bind
+  ([remap other-window] . switch-window))
