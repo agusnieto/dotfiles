@@ -1,3 +1,7 @@
+;; lexical binding ignore for emacs 31.0.90
+(setq warning-inhibit-types '((files missing-lexbind-cookie)))
+(setq warning-suppress-types '((lexical-binding)))
+
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
@@ -20,7 +24,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(doom-challenger-deep))
+ '(custom-enabled-themes '(doom-sourcerer))
  '(custom-safe-themes
    '("e8bd9bbf6506afca133125b0be48b1f033b1c8647c628652ab7a2fe065c10ef0"
      "e4a702e262c3e3501dfe25091621fe12cd63c7845221687e36a79e17cf3a67e0"
@@ -101,10 +105,12 @@
      "720838034f1dd3b3da66f6bd4d053ee67c93a747b219d1c546c41c4e425daf93"
      "c4df9006b9eb32599d758800a32f3487c2cdf13826084511783b47d419024af2"
      default))
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(avy doom-themes ido-vertical-mode org-bullets smex spaceline swiper
+	 switch-window)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :background "#1E1C31" :foreground "#CBE3E7" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 120 :width normal :foundry "SAJA" :family "CaskaydiaMono Nerd Font")))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 120 :width normal :foundry "SAJA" :family "CaskaydiaMono Nerd Font")))))
